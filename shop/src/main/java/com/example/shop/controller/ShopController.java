@@ -28,6 +28,11 @@ public class ShopController {
         return new ResponseEntity<>(shop, HttpStatus.OK);
     }
 
+    @GetMapping("/status")
+    public ResponseEntity<String> getStatus() {
+        return ResponseEntity.ok("UP");
+    }
+
     @GetMapping
     public ResponseEntity<List<Shop>> getAllShops() {
         List<Shop> shops = shopService.getAllShops();
